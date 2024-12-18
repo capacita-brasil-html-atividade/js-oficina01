@@ -51,5 +51,9 @@ let contatos = [
   ];
   const assuntos = contatos.map(contato => contato.assunto);
 
+  const duvidas = contatos.filter(contato => contato.assunto === "Dúvida")
+  const suporteTecnico = contatos.filter(contato => contato.assunto ==="Suporte Técnico")
+  const sugestao = contatos.filter(contato => contatos.assunto ==="Sugestão" )
+
   console.log(assuntos)
   
