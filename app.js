@@ -49,5 +49,7 @@ let contatos = [
     { nome: "Henrique", email: "henrique@email.com", assunto: "Suporte Técnico", mensagem: "A senha não é reconhecida ao logar." },
     { nome: "Érica", email: "erica@email.com", assunto: "Dúvida", mensagem: "Como faço para alterar meu endereço?" }
   ];
+  const assuntos = contatos.map(contato => contato.assunto);
 
+  console.log(assuntos)
   
