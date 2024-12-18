@@ -49,11 +49,32 @@ let contatos = [
     { nome: "Henrique", email: "henrique@email.com", assunto: "Suporte Técnico", mensagem: "A senha não é reconhecida ao logar." },
     { nome: "Érica", email: "erica@email.com", assunto: "Dúvida", mensagem: "Como faço para alterar meu endereço?" }
   ];
-  const assuntos = contatos.map(contato => contato.assunto);
+  
+  function filtrarAssunto (contatos, assunto) {
+  return contatos.filter(contato => contato.assunto === assunto)
 
-  const duvidas = contatos.filter(contato => contato.assunto === "Dúvida")
-  const suporteTecnico = contatos.filter(contato => contato.assunto ==="Suporte Técnico")
-  const sugestao = contatos.filter(contato => contatos.assunto ==="Sugestão" )
+  }
 
-  console.log(assuntos)
+  const duvidas = filtrarAssunto(contatos, 'Dúvida')
+  console.log(duvidas)
+  const suporteTecnico = filtrarAssunto(contatos, 'Sporte Técnico')
+  console.log(suporteTecnico)
+  const sugestao = filtrarAssunto(contatos, 'Sugestão')
+  console.log(sugestao)
+
+  
+
+
+  function contarMensagensPorAssunto(contatos) {
+    const contagemAssuntos = {};
+
+    contatos.forEach(contato => {
+        const assunto = contato.assunto;
+        contagemAssuntos[assunto] = (contagemAssuntos[assunto] || 0) + 1;
+    });
+
+    return contagemAssuntos;
+  }
+
+  console.log(contarMensagensPorAssunto(contatos))
   
